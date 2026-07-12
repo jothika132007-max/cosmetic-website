@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a> 
+    <a href="products.html">Products</a> 
+    <a href="about.html">About</a> 
+    <a href="contact.html">Contact</a> |
+    <a href="auth.html">Profile</a>
+    <span id="profileBtn"></span>
+</nav>
+
+<div class="top-offer-wrap">
+    <button class="top-offer-btn" onclick="showOfferPopup()">🎁 Special Offer</button>
+</div>
+
+<h1>Glow Beauty Cosmetics</h1>
+<h2>Our Products</h2>
+<input 
+    type="text" 
+    id="searchBar" 
+    placeholder="🔍Search products..." 
+    onkeyup="searchProducts()"
+>
+<br><br>
+<div class="category-menu">
+    <button onclick="showCategory('all')">All</button>
+    <button onclick="showCategory('face')">Face</button>
+    <button onclick="showCategory('lips')">Lips</button>
+    <button onclick="showCategory('eyes')">Eyes</button>
+    <button onclick="showCategory('fragrance')">Fragrance</button>
+    <button onclick="showCategory('skincare')">Skincare</button>
+</div>
+
+<div class="sort-menu">
+    <label for="sortDropdown">Sort by:</label>
+    <select id="sortDropdown" onchange="sortProducts()">
+        <option value="default">Default</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="name-a-z">Name: A-Z</option>
+        <option value="name-z-a">Name: Z-A</option>
+    </select>
+</div>
+ 
+<div class="products-container">
+
+<!-- LIPS -->
+<div class="product lips">
+<button class="wishlist-btn" onclick="addToWishlist('lipstick', 499)">❤️</button>
+<img src="assets/img/lipstick.jpg" onclick="showProductDetail('LIPSTICK', 499)" style="cursor: pointer;">
+<b onclick="showProductDetail('LIPSTICK', 499)" style="cursor: pointer;">LIPSTICK</b>
+<div class="price">₹499</div>
+<ul>
+<li>10ml</li>
+<li>Waterproof</li>
+<li>Matte finish</li>
+<li>Long-lasting</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('lipstick', 499)">Add to Cart 🛒</button>
+    <div class="qty-box" id="lipstick-qty" style="display:none;">
+        <button onclick="changeQty('lipstick', -1)">-</button>
+        <span id="lipstick-count">1</span>
+        <button onclick="changeQty('lipstick', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product lips">
+<button class="wishlist-btn" onclick="addToWishlist('lipbalm', 99)">❤️</button>
+<img src="assets/img/lipbalm_lip.jpg" onclick="showProductDetail('LIPBALM', 99)" style="cursor: pointer;"><b onclick="showProductDetail('LIPBALM', 99)" style="cursor: pointer;">LIPBALM</b>
+<div class="price">₹99</div>
+<ul>
+<li>10g</li>
+<li>Moisturizing</li>
+<li>Tinted balm</li>
+<li>Prevents dryness</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('lipbalm', 99)">Add to Cart 🛒</button>
+    <div class="qty-box" id="lipbalm-qty" style="display:none;">
+        <button onclick="changeQty('lipbalm', -1)">-</button>
+        <span id="lipbalm-count">1</span>
+        <button onclick="changeQty('lipbalm', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product lips">
+<button class="wishlist-btn" onclick="addToWishlist('lipgloss', 149)">❤️</button>
+<img src="assets/img/lipgloss_lip.jpg" onclick="showProductDetail('LIPGLOSS', 149)" style="cursor: pointer;"><b onclick="showProductDetail('LIPGLOSS', 149)" style="cursor: pointer;">LIPGLOSS</b>
+<div class="price">₹149</div>
+<ul>
+<li>15g</li>
+<li>High shine</li>
+<li>Non-sticky</li>
+<li>Lightweight</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('lipgloss', 149)">Add to Cart 🛒</button>
+    <div class="qty-box" id="lipgloss-qty" style="display:none;">
+        <button onclick="changeQty('lipgloss', -1)">-</button>
+        <span id="lipgloss-count">1</span>
+        <button onclick="changeQty('lipgloss', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product lips">
+<button class="wishlist-btn" onclick="addToWishlist('lipliner', 70)">❤️</button>
+<img src="assets/img/lipliner_lips.jpg" onclick="showProductDetail('LIPLINER', 70)" style="cursor: pointer;"><b onclick="showProductDetail('LIPLINER', 70)" style="cursor: pointer;">LIPLINER</b>
+<div class="price">₹70</div>
+<ul>
+<li>12 shades</li>
+<li>Matte finish</li>
+<li>Defines lips</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('lipliner', 70)">Add to Cart 🛒</button>
+    <div class="qty-box" id="lipliner-qty" style="display:none;">
+        <button onclick="changeQty('lipliner', -1)">-</button>
+        <span id="lipliner-count">1</span>
+        <button onclick="changeQty('lipliner', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<!-- FACE -->
+<div class="product face">
+<button class="wishlist-btn" onclick="addToWishlist('foundation', 699)">❤️</button>
+<img src="assets/img/foundation.png" onclick="showProductDetail('FOUNDATION', 699)" style="cursor: pointer;"><b onclick="showProductDetail('FOUNDATION', 699)" style="cursor: pointer;">FOUNDATION</b>
+<div class="price">₹699</div>
+<ul>
+<li>30ml</li>
+<li>Lightweight</li>
+<li>Full coverage</li>
+<li>All skin types</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('foundation', 699)">Add to Cart 🛒</button>
+    <div class="qty-box" id="foundation-qty" style="display:none;">
+        <button onclick="changeQty('foundation', -1)">-</button>
+        <span id="foundation-count">1</span>
+        <button onclick="changeQty('foundation', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product face">
+<button class="wishlist-btn" onclick="addToWishlist('compactpowder', 249)">❤️</button>
+<img src="assets/img/compact_face.jpg" onclick="showProductDetail('COMPACT POWDER', 249)" style="cursor: pointer;"><b onclick="showProductDetail('COMPACT POWDER', 249)" style="cursor: pointer;">COMPACT POWDER</b>
+<div class="price">₹249</div>
+<ul>
+<li>20g</li>
+<li>Oil control</li>
+<li>Matte finish</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('compactpowder', 249)">Add to Cart 🛒</button>
+    <div class="qty-box" id="compactpowder-qty" style="display:none;">
+        <button onclick="changeQty('compactpowder', -1)">-</button>
+        <span id="compactpowder-count">1</span>
+        <button onclick="changeQty('compactpowder', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product face">
+<button class="wishlist-btn" onclick="addToWishlist('settingspray', 299)">❤️</button>
+<img src="assets/img/settingspray__face.jpg" onclick="showProductDetail('SETTING SPRAY', 299)" style="cursor: pointer;"><b onclick="showProductDetail('SETTING SPRAY', 299)" style="cursor: pointer;">SETTING SPRAY</b>
+<div class="price">₹299</div>
+<ul>
+<li>30ml</li>
+<li>Long-lasting</li>
+<li>Alcohol-free</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('settingspray', 299)">Add to Cart 🛒</button>
+    <div class="qty-box" id="settingspray-qty" style="display:none;">
+        <button onclick="changeQty('settingspray', -1)">-</button>
+        <span id="settingspray-count">1</span>
+        <button onclick="changeQty('settingspray', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<!-- EYES -->
+<div class="product eyes">
+<button class="wishlist-btn" onclick="addToWishlist('eyeliner', 99)">❤️</button>
+<img src="assets/img/eyeliner_eye.jpg" onclick="showProductDetail('EYELINER', 99)" style="cursor: pointer;"><b onclick="showProductDetail('EYELINER', 99)" style="cursor: pointer;">EYELINER</b>
+<div class="price">₹99</div>
+<ul>
+<li>Waterproof</li>
+<li>Deep black</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('eyeliner', 99)">Add to Cart 🛒</button>
+    <div class="qty-box" id="eyeliner-qty" style="display:none;">
+        <button onclick="changeQty('eyeliner', -1)">-</button>
+        <span id="eyeliner-count">1</span>
+        <button onclick="changeQty('eyeliner', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product eyes">
+<button class="wishlist-btn" onclick="addToWishlist('eyeshadow', 399)">❤️</button>
+<img src="assets/img/eyeshadow_eye.jpg" onclick="showProductDetail('EYESHADOW', 399)" style="cursor: pointer;"><b onclick="showProductDetail('EYESHADOW', 399)" style="cursor: pointer;">EYESHADOW</b>
+<div class="price">₹399</div>
+<ul>
+<li>15 shades</li>
+<li>Matte & shimmer</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('eyeshadow', 399)">Add to Cart 🛒</button>
+    <div class="qty-box" id="eyeshadow-qty" style="display:none;">
+        <button onclick="changeQty('eyeshadow', -1)">-</button>
+        <span id="eyeshadow-count">1</span>
+        <button onclick="changeQty('eyeshadow', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product eyes">
+<button class="wishlist-btn" onclick="addToWishlist('kajal', 199)">❤️</button>
+<img src="assets/img/kajal_eye.jpg" onclick="showProductDetail('KAJAL', 199)" style="cursor: pointer;"><b onclick="showProductDetail('KAJAL', 199)" style="cursor: pointer;">KAJAL</b>
+<div class="price">₹199</div>
+<ul>
+<li>Smudge-proof</li>
+<li>Long-lasting</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('kajal', 199)">Add to Cart 🛒</button>
+    <div class="qty-box" id="kajal-qty" style="display:none;">
+        <button onclick="changeQty('kajal', -1)">-</button>
+        <span id="kajal-count">1</span>
+        <button onclick="changeQty('kajal', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product eyes">
+<button class="wishlist-btn" onclick="addToWishlist('mascara', 199)">❤️</button>
+<img src="assets/img/mascara_eye.jpg" onclick="showProductDetail('MASCARA', 199)" style="cursor: pointer;"><b onclick="showProductDetail('MASCARA', 199)" style="cursor: pointer;">MASCARA</b>
+<div class="price">₹199</div>
+<ul>
+<li>Volume boost</li>
+<li>Deep black</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('mascara', 199)">Add to Cart 🛒</button>
+    <div class="qty-box" id="mascara-qty" style="display:none;">
+        <button onclick="changeQty('mascara', -1)">-</button>
+        <span id="mascara-count">1</span>
+        <button onclick="changeQty('mascara', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<!-- FRAGRANCE -->
+<div class="product fragrance">
+<button class="wishlist-btn" onclick="addToWishlist('perfume', 199)">❤️</button>
+<img src="assets/img/perfume.png" onclick="showProductDetail('PERFUME', 199)" style="cursor: pointer;"><b onclick="showProductDetail('PERFUME', 199)" style="cursor: pointer;">PERFUME</b>
+<div class="price">₹199</div>
+<ul>
+<li>Fresh fragrance</li>
+<li>24hr lasting</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('perfume', 199)">Add to Cart 🛒</button>
+    <div class="qty-box" id="perfume-qty" style="display:none;">
+        <button onclick="changeQty('perfume', -1)">-</button>
+        <span id="perfume-count">1</span>
+        <button onclick="changeQty('perfume', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product fragrance">
+<button class="wishlist-btn" onclick="addToWishlist('bodymist', 299)">❤️</button>
+<img src="assets/img/perume__fragrance.jpg" onclick="showProductDetail('BODY MIST', 299)" style="cursor: pointer;"><b onclick="showProductDetail('BODY MIST', 299)" style="cursor: pointer;">BODY MIST</b>
+<div class="price">₹299</div>
+<ul>
+<li>Strawberry fragrance</li>
+<li>Refreshing</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('bodymist', 299)">Add to Cart 🛒</button>
+    <div class="qty-box" id="bodymist-qty" style="display:none;">
+        <button onclick="changeQty('bodymist', -1)">-</button>
+        <span id="bodymist-count">1</span>
+        <button onclick="changeQty('bodymist', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<!-- SKINCARE -->
+<div class="product skincare">
+<button class="wishlist-btn" onclick="addToWishlist('serum', 499)">❤️</button>
+<img src="assets/img/serum_skincare.png" onclick="showProductDetail('SERUM', 499)" style="cursor: pointer;"><b onclick="showProductDetail('SERUM', 499)" style="cursor: pointer;">SERUM</b>
+<div class="price">₹499</div>
+<ul>
+<li>Vitamin C</li>
+<li>Glow boost</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('serum', 499)">Add to Cart 🛒</button>
+    <div class="qty-box" id="serum-qty" style="display:none;">
+        <button onclick="changeQty('serum', -1)">-</button>
+        <span id="serum-count">1</span>
+        <button onclick="changeQty('serum', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product skincare">
+<button class="wishlist-btn" onclick="addToWishlist('sunscreen', 230)">❤️</button>
+<img src="assets/img/sunscreen_skincare.png" onclick="showProductDetail('SUNSCREEN', 230)" style="cursor: pointer;"><b onclick="showProductDetail('SUNSCREEN', 230)" style="cursor: pointer;">SUNSCREEN</b>
+<div class="price">₹230</div>
+<ul>
+<li>SPF 50</li>
+<li>No white cast</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('sunscreen', 230)">Add to Cart 🛒</button>
+    <div class="qty-box" id="sunscreen-qty" style="display:none;">
+        <button onclick="changeQty('sunscreen', -1)">-</button>
+        <span id="sunscreen-count">1</span>
+        <button onclick="changeQty('sunscreen', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product skincare">
+<button class="wishlist-btn" onclick="addToWishlist('toner', 180)">❤️</button>
+<img src="assets/img/toner_skincare.png" onclick="showProductDetail('TONER', 180)" style="cursor: pointer;"><b onclick="showProductDetail('TONER', 180)" style="cursor: pointer;">TONER</b>
+<div class="price">₹180</div>
+<ul>
+<li>Alcohol-free</li>
+<li>Cooling</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('toner', 180)">Add to Cart 🛒</button>
+    <div class="qty-box" id="toner-qty" style="display:none;">
+        <button onclick="changeQty('toner', -1)">-</button>
+        <span id="toner-count">1</span>
+        <button onclick="changeQty('toner', 1)">+</button>
+    </div>
+</div>
+</div>
+
+<div class="product skincare">
+<button class="wishlist-btn" onclick="addToWishlist('facewash', 199)">❤️</button>
+<img src="assets/img/facewash_skincare.jpg" onclick="showProductDetail('FACE WASH', 199)" style="cursor: pointer;"><b onclick="showProductDetail('FACE WASH', 199)" style="cursor: pointer;">FACE WASH</b>
+<div class="price">₹199</div>
+<ul>
+<li>Gel type</li>
+<li>Brightening</li>
+</ul>
+<div class="cart-actions">
+    <button onclick="addToCart('facewash', 199)">Add to Cart 🛒</button>
+    <div class="qty-box" id="facewash-qty" style="display:none;">
+        <button onclick="changeQty('facewash', -1)">-</button>
+        <span id="facewash-count">1</span>
+        <button onclick="changeQty('facewash', 1)">+</button>
+    </div>
+</div>
+</div>
+
+</div>
+
+<div class="panel-backdrop" id="panelBackdrop" onclick="closePanels()"></div>
+
+<div id="cartPanel" class="bottom-panel" aria-hidden="true">
+    <div class="panel-header">
+        <h2>🛒 Cart</h2>
+        <button class="close-btn" onclick="closePanels()">✕</button>
+    </div>
+    <div class="panel-content">
+        <div id="cartBox"></div>
+        <div class="cart-summary">
+            <span>Total</span>
+            <strong id="total">₹0</strong>
+        </div>
+        <div class="clear-actions">
+            <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+</div>
+
+<div id="wishlistPanel" class="bottom-panel" aria-hidden="true">
+    <div class="panel-header">
+        <h2>❤️ Wishlist</h2>
+        <button class="close-btn" onclick="closePanels()">✕</button>
+    </div>
+    <div class="panel-content">
+        <div id="wishlistBox"></div>
+        <div class="clear-actions">
+            <button class="clear-btn" onclick="clearWishlist()">Clear Wishlist</button>
+        </div>
+    </div>
+</div>
+
+<div class="mobile-bottom-nav">
+    <button onclick="togglePanel('cart')">🛒 Cart <span class="badge" id="cartCountBadge">0</span></button>
+    <button onclick="togglePanel('wishlist')">❤️ Wishlist <span class="badge" id="wishlistCountBadge">0</span></button>
+</div>
+
+<div id="checkoutModal" class="checkout-modal" aria-hidden="true">
+    <div class="checkout-card">
+        <button class="close-btn" onclick="closeCheckoutModal()">✕</button>
+        <h2>Checkout</h2>
+        <p class="checkout-subtitle">Secure payment • Fast delivery • Easy returns</p>
+        <div id="checkoutItems" class="checkout-items"></div>
+        <div class="checkout-summary-row">
+            <span>Subtotal</span>
+            <strong id="checkoutSubtotal">₹0</strong>
+        </div>
+        <div id="checkoutOfferBox" class="checkout-offer-box">Offer: 25% OFF on every order • 50% OFF above ₹600 • 75% OFF above ₹1000</div>
+        <div class="checkout-summary-row offer-row" id="checkoutDiscountRow">
+            <span>Offer discount</span>
+            <strong id="checkoutDiscount">-₹0</strong>
+        </div>
+        <div class="checkout-summary-row">
+            <span>Shipping</span>
+            <strong>₹49</strong>
+        </div>
+        <div class="checkout-summary-row total-row">
+            <span>Total</span>
+            <strong id="checkoutTotal">₹0</strong>
+        </div>
+        <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+</div>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="product-detail-modal" id="productDetailModal">
+    <div class="product-detail-container">
+        <button class="close-btn" onclick="closeProductDetail()">✕</button>
+        <img id="detailImg" src="" alt="Product" class="product-detail-img">
+        <h2 id="detailName" class="product-detail-name"></h2>
+        <div id="detailPrice" class="product-detail-price"></div>
+        <div id="detailFeatures" class="product-detail-features"></div>
+        <div id="detailActions" class="cart-actions"></div>
+    </div>
+</div>
+
+<!-- SPECIAL OFFER POPUP -->
+<div class="offer-popup" id="offerPopup">
+    <div class="offer-content">
+        <button class="offer-close" onclick="closeOfferPopup()">✕</button>
+        <h2>🎉  GLAM SAVINGS</h2>
+        <p style="font-size: 24px; color: #ff6b9d; margin: 15px 0;">25% OFF on every order</p>
+        <p>Spend above ₹600 and get 50% OFF</p>
+        <p>Spend above ₹1000 and get 75% OFF</p>
+        <p style="color: #666; font-size: 14px; margin: 15px 0;">No code needed • Extra savings on big baskets</p>
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

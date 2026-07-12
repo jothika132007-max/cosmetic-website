@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile - Glow Beauty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="profile-container">
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="products.html">Products</a> |
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a> |
+            <span id="authStatus"></span>
+        </nav>
+
+        <div class="profile-box">
+            <h1>My Profile</h1>
+            <div class="profile-info">
+                <div class="profile-field">
+                    <label>Name:</label>
+                    <p id="userName"></p>
+                </div>
+                <div class="profile-field">
+                    <label>Email:</label>
+                    <p id="userEmail"></p>
+                </div>
+                <div class="profile-field">
+                    <label>Member Since:</label>
+                    <p id="userJoinDate"></p>
+                </div>
+                <div class="profile-field">
+                    <label>Address:</label>
+                    <p id="userAddress"></p>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button onclick="editProfile()" class="btn-primary">Edit Profile</button>
+            </div>
+
+            <div class="profile-dashboard">
+                <div class="dashboard-card">
+                    <h2>My Orders</h2>
+                    <div id="ordersList" class="orders-list"></div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2>My Wishlist</h2>
+                    <div id="profileWishlist" class="wishlist-list"></div>
+                </div>
+
+                <div class="dashboard-card address-card">
+                    <h2>My Address</h2>
+                    <p id="addressText"></p>
+                    <button onclick="editAddress()" class="btn-primary">Edit Address</button>
+                </div>
+            </div>
+
+            <div class="profile-actions bottom-action">
+                <button onclick="signOut()" class="btn-danger">Sign Out</button>
+            </div>
+
+            <!-- Edit Profile Modal -->
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Edit Profile</h2>
+                    <input type="text" id="editName" placeholder="Full Name" required>
+                    <input type="email" id="editEmail" placeholder="Email" required>
+                    <button onclick="saveProfile()" class="btn-primary">Save Changes</button>
+                </div>
+            </div>
+
+            <div id="addressModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeAddressModal()">&times;</span>
+                    <h2>Edit Address</h2>
+                    <textarea id="editAddress" placeholder="Enter your full shipping address"></textarea>
+                    <button onclick="saveAddress()" class="btn-primary">Save Address</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="messageBox" class="message-box"></div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>
